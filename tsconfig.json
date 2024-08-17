@@ -3,5 +3,25 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["src/components/*"],
+      // "@assets/*": ["public/assets/*"],
+      // "@data/*": ["./src/data/*"],
+      // "@modules/*": ["./src/modules/*"],
+      // "@utils/*": ["./src/utils/*"],
+    },
+    "resolveJsonModule": true,
+    "target": "ES6",
+    "verbatimModuleSyntax": false,
+  },
 }
