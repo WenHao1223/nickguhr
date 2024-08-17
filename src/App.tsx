@@ -1,12 +1,17 @@
 import './App.css'
 
 import Navbar from "./components/Navbar"
+import Dashboard from "./components/Dashboard"
 
 function App() {
   return (
     <>
-      <Navbar />
-      <h1>test</h1>
+      <div className='mb-2'>
+        <Navbar/>
+      </div>
+      <div>
+        <Dashboard/>
+      </div>
     </>
   )
 }
