@@ -9,12 +9,12 @@ function Borrow () {
         <div className="w-1/2 p-4">
           {/* Left section content */}
           {/* <p>This is the left section.</p> */}
-          <TokenBox cardTitle="You collateralize"/>
+          <TokenBox cardTitle="You collateralize" attachment={true} val={40}/>
         </div>
         <div className="w-1/2 p-4">
           {/* Right section content */}
           {/* <p>This is the right section.</p> */}
-          <TokenBox cardTitle="You borrow"/>
+          <TokenBox cardTitle="You borrow" attachment={false} val={40}/>
         </div>
       </div>
     </>
