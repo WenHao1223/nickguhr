@@ -6,7 +6,7 @@ import ReactDOM from "react-dom/client";
 import App from "@/App";
 // Internal components
 import { Toaster } from "@/components/ui/toaster";
-import { WalletProvider } from "@/components/WalletProvider";
+import { WalletProvider } from "@/components/wallet/WalletProvider";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
