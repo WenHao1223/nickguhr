@@ -1,9 +1,11 @@
 import InputSelectToken from "@/components/input/InputSelectToken";
+import PropertyCard from "@/components/borrow/PropertyCard";
 
 interface TokenBoxProps {
   cardTitle: string;
   attachment: boolean;
   val: number;
+  propsNow?: any;
 }
 
 function TokenBox (props: TokenBoxProps) {
@@ -16,24 +18,17 @@ function TokenBox (props: TokenBoxProps) {
         </label> */}
         <InputSelectToken val={props.val}/>
       </div>
-      { props.attachment && <>
-        <div className="card lg:card-side bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://www.mydomaine.com/thmb/K3GkP6INFV9SHaLogJWSpOgRHVY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-523235876-a82866095771495f8146e8cd7adb1593.jpg"
-              alt="NFT"
-              className="h-44 aspect-square"/>
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title text-left">4,000 sq ft Bungalow</h2>
-            <p className="text-left">Ipoh, Perak, Malaysia.</p>
-            <p className="text-left">86.62 ETH</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Select another property</button>
-            </div>
-          </div>
-        </div>
-      </>}
+        { props.attachment && 
+          <PropertyCard
+            name = {props.propsNow.name}
+            location = {props.propsNow.location}
+            des = {props.propsNow.des}
+            price = {props.propsNow.price}
+            unit = {props.propsNow.unit}
+            img = {props.propsNow.img}
+            isSelectProperty = {true}
+          />
+        }
     </div>
   );
 }

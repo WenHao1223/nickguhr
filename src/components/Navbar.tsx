@@ -62,7 +62,7 @@ function Navbar () {
                 </button>
                 <dialog id="walletDetailsModal" className="modal justify-normal items-center">
                   <div className="modal-box">
-                    <p className="mb-4">Press ESC key or click the button below to close</p>
+                    <p className="mb-4 text-xs font-gray-600 opacity-75">Press ESC key or click the button below to close</p>
                     <Card>
                       <CardContent className="flex flex-col gap-10 pt-6">
                         <WalletDetails />
@@ -70,7 +70,7 @@ function Navbar () {
                         {/* <AccountInfo /> */}
                       </CardContent>
                     </Card>
-                    
+
                     <div className="modal-action">
                       <form method="dialog">
                         <button className="btn">Close</button>
