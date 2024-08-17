@@ -19,6 +19,17 @@ function Borrow () {
 
   const props = {name, location, des, price, unit, img};
 
+  const setPropertyData = (newProps: any) => {
+    setName(newProps.name);
+    setLocation(newProps.location);
+    setDes(newProps.des);
+    setPrice(newProps.price);
+    setUnit(newProps.unit);
+    setImg(newProps.img);
+
+    console.log(newProps);
+  }
+
   return (
     <>
       <h1 className="font-semibold text-3xl">Borrow</h1>
@@ -27,7 +38,7 @@ function Borrow () {
         <div className="w-1/2 p-4">
           {/* Left section content */}
           {/* <p>This is the left section.</p> */}
-          <TokenBox propsNow={props} cardTitle="You collateralize" attachment={true} val={40}/>
+          <TokenBox setPropertyData={setPropertyData} propsNow={props} cardTitle="You collateralize" attachment={true} val={40}/>
         </div>
         <div className="w-1/2 p-4">
           {/* Right section content */}

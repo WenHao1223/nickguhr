@@ -6,6 +6,7 @@ interface TokenBoxProps {
   attachment: boolean;
   val: number;
   propsNow?: any;
+  setPropertyData?: any;
 }
 
 function TokenBox (props: TokenBoxProps) {
@@ -27,6 +28,7 @@ function TokenBox (props: TokenBoxProps) {
             unit = {props.propsNow.unit}
             img = {props.propsNow.img}
             isSelectProperty = {true}
+            setPropertyData = {props.setPropertyData}
           />
         }
     </div>

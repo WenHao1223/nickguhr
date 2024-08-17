@@ -9,6 +9,7 @@ interface PropertyCardProps {
   unit: string;
   img: string;
   isSelectProperty?: boolean;
+  setPropertyData?: any;
 }
 
 function PropertyCard (props: PropertyCardProps) {
@@ -30,11 +31,22 @@ function PropertyCard (props: PropertyCardProps) {
           { props.isSelectProperty ?
             <>
               <button className="btn btn-primary" onClick={()=>(document.getElementById('propertySelectModel') as HTMLDialogElement).showModal()}>Select another property</button>
-              <PropertyModal/>
+              <PropertyModal setPropertyData={props.setPropertyData}/>
             </>
             :
             <>
-              <button className="btn btn-primary">Select</button>
+              <button className="btn btn-primary" onClick={
+                () => {
+                  props.setPropertyData({
+                    name: props.name,
+                    location: props.location,
+                    des: props.des,
+                    price: props.price,
+                    unit: props.unit,
+                    img: props.img
+                  })
+                }
+              }>Select</button>
             </>}
         </div>
       </div>

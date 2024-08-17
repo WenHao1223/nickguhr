@@ -1,7 +1,7 @@
 import PropertyCard from "@/components/borrow/PropertyCard";
 import propertyData from "@/data/propertyData.json";
 
-function PropertyModal () {
+function PropertyModal (props) {
   return (
     <dialog id="propertySelectModel" className="modal">
       <div className="modal-box">
@@ -22,6 +22,7 @@ function PropertyModal () {
               unit={property.unit}
               img={property.img}
               isSelectProperty={false}
+              setPropertyData = {props.setPropertyData}
             />
           ))
         }
