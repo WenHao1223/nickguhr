@@ -1,4 +1,14 @@
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Header } from "@/components/Header";
+
+import { WalletDetails } from "@/components/WalletDetails";
+import { NetworkInfo } from "@/components/NetworkInfo";
+// import { AccountInfo } from "@/components/AcoountInfo";
+
 function Navbar () {
+  const { connected } = useWallet();
+
   return (
     <>
       <div className="navbar bg-zinc-900 rounded-md">
@@ -32,7 +42,7 @@ function Navbar () {
               <li><a>Item 3</a></li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">RWAR </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -43,7 +53,21 @@ function Navbar () {
           </ul>
         </div>  
         <div className="navbar-end">
-          <a className="btn btn-primary">Connect Your Wallet</a>
+          {/* <a className="btn btn-primary">Connect Your Wallet</a> */}
+          {/* <WalletSelector /> */}
+          <div className="flex items-center justify-center flex-col">
+            <Header />
+
+            {connected && (
+              <Card>
+                <CardContent className="flex flex-col gap-10 pt-6">
+                  <WalletDetails />
+                  <NetworkInfo />
+                  {/* <AccountInfo /> */}
+                </CardContent>
+              </Card>
+            )}
+          </div>
         </div>
       </div>
     </>
