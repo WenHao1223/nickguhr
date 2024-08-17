@@ -36,7 +36,7 @@ function Borrow () {
         <div className="w-1/2 p-4">
           {/* Left section content */}
           {/* <p>This is the left section.</p> */}
-          <TokenBox setPropertyData={setPropertyData} propsNow={props} cardTitle="You collateralize" attachment={true} val={40}/>
+          <TokenBox setPropertyData={setPropertyData} propsNow={props} cardTitle="You collateralize" attachment={true} val={props.price}/>
         </div>
         <div className="w-1/2 p-4">
           {/* Right section content */}
