@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Header } from "@/components/Header";
@@ -31,25 +33,20 @@ function Navbar () {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
+              <li><Link to="/">Dashboard</Link></li>
+              <li><Link to="/lend">Lend</Link></li>
+              <li><Link to="/borrow">Borrow</Link></li>
+              <li><Link to="/tokenize">Tokenize Your Assets</Link></li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">RWAR </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Dashboard</a></li>
-            <li><a>Lend</a></li>
-            <li><a>Borrow</a></li>
-            <li><a>Tokenize Your Assets</a></li>            
+            <li><Link to="/">Dashboard</Link></li>
+            <li><Link to="/lend">Lend</Link></li>
+            <li><Link to="/borrow">Borrow</Link></li>
+            <li><Link to="/tokenize">Tokenize Your Assets</Link></li>
           </ul>
         </div>  
         <div className="navbar-end">

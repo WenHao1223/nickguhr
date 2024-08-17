@@ -1,7 +1,17 @@
+// react-router-dom
+import { Route, Routes, Outlet, Link } from 'react-router-dom';
+
 import './App.css'
 
-import Navbar from "@/components/Navbar"
-import Dashboard from "@/pages/Dashboard"
+// elements
+import Navbar from "@/components/Navbar";
+
+// pages
+import Dashboard from '@/pages/Dashboard';
+import Lend from '@/pages/Lend'
+import Borrow from '@/pages/Borrow';
+import Tokenize from '@/pages/Tokenize';
+import PageNotFound from '@/pages/PageNotFound';
 
 function App() {
   return (
@@ -10,7 +20,19 @@ function App() {
         <Navbar/>
       </div>
       <div>
-        <Dashboard/>
+        <Routes>
+          <Route path="/" element={<Dashboard/>} />
+          {/* <Route
+            path="/example/two-deep"
+            element={ExampleTwoDeepelement}
+          /> */}
+          <Route path="/lend" element={<Lend/>} />
+          <Route path="/borrow" element={<Borrow/>} />
+          <Route path="/tokenize" element={<Tokenize/>} />
+          <Route element={<PageNotFound/>} />
+        </Routes>
+
+        <Outlet />
       </div>
     </>
   )
