@@ -10,12 +10,25 @@ interface TokenBoxProps {
   defaultVal?: number;
   propsNow?: any;
   setPropertyData?: any;
+  unit?: string;
 }
 
 function TokenBox (props: TokenBoxProps) {
   useEffect(() => {
-    const collatTextbox = document.getElementById('collatTextbox') as HTMLInputElement;
+    if (props.cardTitle === "You collateralize") {
+      const collatTextbox = document.getElementById('collatTextbox') as HTMLInputElement;
       collatTextbox.value = String(props.defaultVal);
+    } else {
+      const borrowTextbox = document.getElementById('borrowTextbox') as HTMLInputElement;
+      borrowTextbox.value = String(props.defaultVal);
+
+      
+    }
+    const borrowUnit = document.getElementById('borrowTextbox-unit') as HTMLSelectElement;
+    borrowUnit.value = props.propsNow?.unit;
+
+    // const borrowTextbox = document.getElementById('borrowTextbox') as HTMLInputElement;
+    // borrowTextbox.value = String(props.defaultVal);
   }, [props.propsNow?.img]);
   
   return (
@@ -25,20 +38,33 @@ function TokenBox (props: TokenBoxProps) {
         {/* <label className="block uppercase tracking-wide text-zinc-200 text-xs font-bold mb-2" htmlFor="grid-last-name">
           Value
         </label> */}
-        <InputSelectToken id="collatTextbox" val={props.val} defaultVal={props.defaultVal}/>
-      </div>
-        { props.attachment && 
-          <PropertyCard
-            name = {props.propsNow.name}
-            location = {props.propsNow.location}
-            des = {props.propsNow.des}
-            price = {props.propsNow.price}
-            unit = {props.propsNow.unit}
-            img = {props.propsNow.img}
-            isSelectProperty = {true}
-            setPropertyData = {props.setPropertyData}
-          />
+        {
+          props.cardTitle === "You collateralize" ?
+            <InputSelectToken id="collatTextbox" val={props.val} defaultVal={props.defaultVal}/>
+            :
+            <InputSelectToken id="borrowTextbox" val={props.val} defaultVal={props.defaultVal}/>
         }
+      </div>
+      { props.cardTitle === "You collateralize" ?
+        props.attachment && 
+        <PropertyCard
+          name = {props.propsNow.name}
+          location = {props.propsNow.location}
+          des = {props.propsNow.des}
+          price = {props.propsNow.price}
+          unit = {props.propsNow.unit}
+          img = {props.propsNow.img}
+          isSelectProperty = {true}
+          setPropertyData = {props.setPropertyData}
+        />
+      :
+        <>
+          <p className="text-xs font-gray-600 opacity-75">
+            Maximum amount of money you can borrow is
+            <span className="text-zinc-200 font-bold"> {props.defaultVal / 2} {props.unit}</span>
+          </p>
+        </>
+      }
     </div>
   );
 }

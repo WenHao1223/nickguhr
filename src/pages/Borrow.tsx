@@ -26,6 +26,12 @@ function Borrow () {
     setPrice(newProps.price);
     setUnit(newProps.unit);
     setImg(newProps.img);
+
+    const borrowTextbox = document.getElementById("borrowTextbox") as HTMLInputElement;
+    if (borrowTextbox) {
+      borrowTextbox.value = String(newProps.price / 2);
+    }
+    
   }
 
   return (
@@ -41,7 +47,7 @@ function Borrow () {
         <div className="w-1/2 p-4">
           {/* Right section content */}
           {/* <p>This is the right section.</p> */}
-          <TokenBox cardTitle="You borrow" attachment={false} val={40}/>
+          <TokenBox cardTitle="You borrow" attachment={false} defaultVal={props.price} unit={props.unit}/>
         </div>
       </div>
     </>
