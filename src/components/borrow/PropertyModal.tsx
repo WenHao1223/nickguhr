@@ -2,6 +2,8 @@ import PropertyCard from "@/components/borrow/PropertyCard";
 import propertyData from "@/data/propertyData.json";
 
 function PropertyModal (props) {
+  // if props.img changing, key down esc
+
   return (
     <dialog id="propertySelectModel" className="modal">
       <div className="modal-box">

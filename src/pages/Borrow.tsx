@@ -26,8 +26,6 @@ function Borrow () {
     setPrice(newProps.price);
     setUnit(newProps.unit);
     setImg(newProps.img);
-
-    console.log(newProps);
   }
 
   return (

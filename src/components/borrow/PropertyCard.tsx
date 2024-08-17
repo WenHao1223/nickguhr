@@ -12,7 +12,17 @@ interface PropertyCardProps {
   setPropertyData?: any;
 }
 
+import { useEffect } from "react";
+
 function PropertyCard (props: PropertyCardProps) {
+  useEffect(() => {
+    // hide modal when esc key is pressed
+    const propertySelectModel = document.getElementById('propertySelectModel') as HTMLDialogElement;
+    if (propertySelectModel) {
+      propertySelectModel.close();
+    }
+  }, [props.img]);
+
   if(props.name !== "")
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
