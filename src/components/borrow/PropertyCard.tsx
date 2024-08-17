@@ -35,6 +35,7 @@ function PropertyCard (props: PropertyCardProps) {
       <div className="card-body">
         <h2 className="card-title text-left">{props.name}</h2>
         <p className="text-left">{props.location}</p>
+        <p className="text-left text-sm text-gray-400">{props.des}</p>
         <p className="text-left">{props.price} {props.unit}</p>
         <div className="card-actions justify-end">
           {/* You can open the modal using document.getElementById('ID').showModal() method */}
