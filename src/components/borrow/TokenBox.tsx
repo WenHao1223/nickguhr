@@ -23,6 +23,9 @@ function TokenBox (props: TokenBoxProps) {
       borrowTextbox.value = String(props.defaultVal / 2);
       
     }
+    const collatUnit = document.getElementById('collatTextbox-unit') as HTMLSelectElement;
+    collatUnit.value = props.propsNow?.unit;
+    
     const borrowUnit = document.getElementById('borrowTextbox-unit') as HTMLSelectElement;
     borrowUnit.value = props.propsNow?.unit;
 
