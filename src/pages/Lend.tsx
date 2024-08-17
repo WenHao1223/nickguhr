@@ -13,7 +13,7 @@ function Lend () {
           Amount To Lend
         </label>
         <div className="flex justify-between items-center">
-          <InputSelectToken id="lendAmount" val={0}/>
+          <InputSelectToken id="lendAmount" defaultVal={0}/>
         </div>
       </div>
 
@@ -24,7 +24,7 @@ function Lend () {
         </label>
         <p className="text-xs font-gray-600 opacity-75">The maximum duration of a loan in days</p>
         <div className="flex justify-between items-center">
-          <InputFixToken id="lendDays" val={7} fixVal="Days"/>
+          <InputFixToken id="lendDays" defaultVal={7} fixVal="Days"/>
         </div>
       </div>
 
@@ -35,7 +35,7 @@ function Lend () {
         </label>
         <p className="text-xs font-gray-600 opacity-75">The interest rate of the loan</p>
         <div className="flex justify-between items-center">
-          <InputFixToken id="lendInterest" val={5} fixVal="%"/>
+          <InputFixToken id="lendInterest" defaultVal={5} fixVal="%"/>
         </div>
       </div>
     </div>

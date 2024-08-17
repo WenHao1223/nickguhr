@@ -5,6 +5,7 @@ interface InputTokenProps {
 }
 
 function InputSelectToken (props: InputTokenProps) {
+  console.log(props.defaultVal)
   return (
     <>
       <input

@@ -23,25 +23,32 @@ function PropertyCard (props: PropertyCardProps) {
     }
   }, [props.img]);
 
-  if(props.name !== "")
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure>
-        <img
-          src={props.img}
-          alt={props.name}
-          className="h-44 aspect-square"/>
+        {
+          props.name !== "" && <>
+            <img
+              src={props.img}
+              alt={props.name}
+              className="h-44 aspect-square"/>
+          </>
+        }
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-left">{props.name}</h2>
-        <p className="text-left">{props.location}</p>
-        <p className="text-left text-sm text-gray-400">{props.des}</p>
-        <p className="text-left">{props.price} {props.unit}</p>
-        <div className="card-actions justify-end">
+        {
+          props.name !== "" && <>
+            <h2 className="card-title text-left">{props.name}</h2>
+            <p className="text-left">{props.location}</p>
+            <p className="text-left text-sm text-gray-400">{props.des}</p>
+            <p className="text-left">{props.price} {props.unit}</p>
+          </>
+        }
+        <div className={`card-actions ${props.name !== "" ? "justify-end" : "justify-center w-full"}`}>
           {/* You can open the modal using document.getElementById('ID').showModal() method */}
           { props.isSelectProperty ?
             <>
-              <button className="btn btn-primary" onClick={()=>(document.getElementById('propertySelectModel') as HTMLDialogElement).showModal()}>Select another property</button>
+              <button className={`btn btn-primary ${props.name === "" && "w-full"}`} onClick={()=>(document.getElementById('propertySelectModel') as HTMLDialogElement).showModal()}>Select another property</button>
               <PropertyModal setPropertyData={props.setPropertyData}/>
             </>
             :
