@@ -10,6 +10,7 @@ interface PropertyCardProps {
   img: string;
   isSelectProperty?: boolean;
   setPropertyData?: any;
+  size?: string;
 }
 
 import { useEffect } from "react";
@@ -24,24 +25,27 @@ function PropertyCard (props: PropertyCardProps) {
   }, [props.img]);
 
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl">
+    <div className={`card lg:card-side ${props.size === 'small' ? 'bg-transparent' : 'bg-base-100'} shadow-xl`}>
       <figure>
         {
           props.name !== "" && <>
             <img
               src={props.img}
               alt={props.name}
-              className="h-44 aspect-square"/>
+              className={`${props.size === "small" ? "h-20" : "h-44"} aspect-square`}/>
           </>
         }
       </figure>
       <div className="card-body">
         {
           props.name !== "" && <>
-            <h2 className="card-title text-left">{props.name}</h2>
-            <p className="text-left">{props.location}</p>
-            <p className="text-left text-sm text-gray-400">{props.des}</p>
-            <p className="text-left">{props.price} {props.unit}</p>
+            <h2 className={`card-title text-left ${props.size === 'small' ? 'text-sm' : ''}`}>{props.name}</h2>
+            <p className={`text-left ${props.size === 'small' ? 'text-xs' : ''}`}>{props.location}</p>
+            {
+              props.size !== "small" &&
+              <p className="text-left text-sm text-gray-400">{props.des}</p>
+            }
+            <p className={`text-left ${props.size === 'small' ? 'text-xs' : ''}`}>{props.price} {props.unit}</p>
           </>
         }
         <div className={`card-actions ${props.name !== "" ? "justify-end" : "justify-center w-full"}`}>
@@ -52,6 +56,7 @@ function PropertyCard (props: PropertyCardProps) {
               <PropertyModal setPropertyData={props.setPropertyData}/>
             </>
             :
+            props.size !== "small" &&
             <>
               <button className="btn btn-primary" onClick={
                 () => {
