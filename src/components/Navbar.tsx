@@ -39,7 +39,7 @@ function Navbar () {
               <li><Link to="/tokenize">Tokenize Your Assets</Link></li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">RWAR </a>
+          <Link to="/" className="btn btn-ghost text-xl">RWAR </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
