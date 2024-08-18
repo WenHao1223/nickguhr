@@ -1,5 +1,6 @@
 import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 import MainDashboard from "@/components/dashboard/MainDashboard";
+import RecentTransaction from "@/components/dashboard/RecentTransaction";
 
 function Dashboard () {
   return (
@@ -15,6 +16,7 @@ function Dashboard () {
           <DashboardSidebar/>
         </div>
       </div>
+      <RecentTransaction/>
     </>
   );
 }
