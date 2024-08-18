@@ -5,6 +5,26 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 function Tokenize () {
+  const tokenizeAsset = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, tokenize my asset!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Your asset has tokenized!",
+          text: "",
+          icon: "success"
+        });
+      }
+    });
+  }
+
   const currentdate = new Date();
   const padZero = (num: number) => (num < 10 ? '0' + num : num);
   const date = padZero(currentdate.getDate()) + "/" 
@@ -62,7 +82,7 @@ function Tokenize () {
 
   return (
     <>
-      <h1 className="font-semibold text-3xl">Add Your Asset</h1>
+      <h1 className="font-semibold text-3xl">Tokenize Your Asset</h1>
       <p className="text-base mt-2 mb-4 text-gray-400">Submit your proof of ownership for validation.</p>
 
       {/* Asset's name */}
@@ -110,6 +130,11 @@ function Tokenize () {
             readOnly={true}
           />
         </div>
+      </div>
+
+      {/* Tokenize asset button */}
+      <div className="mb-4 text-left rounded-md p-4 w-full border border-zinc-800 bg-zinc-800">
+        <button className="btn bg-primary text-zinc-200 w-full" onClick={tokenizeAsset}>Tokenize your asset!</button>
       </div>
     </>
   );
