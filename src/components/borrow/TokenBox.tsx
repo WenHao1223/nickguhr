@@ -4,6 +4,7 @@ import PropertyCard from "@/components/borrow/PropertyCard";
 import conversionData from "@/data/conversionData.json";
 
 import { useEffect } from "react";
+import Swal from 'sweetalert2'
 
 interface TokenBoxProps {
   cardTitle: string;
@@ -41,6 +42,28 @@ function TokenBox (props: TokenBoxProps) {
       maxAmount.innerText = String((props.defaultVal / 2) * conversionData[props.propsNow?.unit]);
     }
   }, [props.propsNow?.img]);
+
+  const confirmBorrow = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, borrow it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Borrowed!",
+          text: "Your asset has been borrowed.",
+          icon: "success"
+        });
+
+        window.location.reload();
+      }
+    });
+  }
   
   return (
     <div className="border border-zinc-800 bg-zinc-800 rounded-md p-4">
@@ -74,6 +97,9 @@ function TokenBox (props: TokenBoxProps) {
           <p className="text-xs font-gray-600 opacity-75">
             Maximum amount of money you can borrow is <span className="text-zinc-200 font-bold" id="t-maxAmount"></span>  USDT
           </p>
+          <button
+            disabled={(document.getElementById("borrowTextbox") as HTMLInputElement)?.value === "0" || null}
+            onClick={confirmBorrow} className="btn btn-primary w-full mt-6">Borrow now!</button>
         </>
       }
     </div>
