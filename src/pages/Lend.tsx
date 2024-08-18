@@ -5,7 +5,7 @@ function Lend () {
   return (
     <div >
       <h1 className="font-semibold text-3xl">Create Pool</h1>
-      <p className="text-base mb-4 text-gray-400">Create a pool to lend your assets to borrowers.</p>
+      <p className="text-base mb-4 mt-2 text-gray-400">Create a pool to lend your assets to borrowers.</p>
 
       {/* Amount to lend */}
       <div className="mb-4 text-left rounded-md p-4 w-full border border-zinc-800 bg-zinc-800">
