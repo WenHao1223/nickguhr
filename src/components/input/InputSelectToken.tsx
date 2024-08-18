@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import conversionData from '@/data/conversionData.json';
 
 interface InputTokenProps {
   val?: number;
@@ -9,10 +10,10 @@ interface InputTokenProps {
 function InputSelectToken (props: InputTokenProps) {
   const [inputValue, setInputValue] = useState(props.defaultVal || '');
 
-  const handleInputChange = () => {
+  const handleInputChange = (e) => {
     const value = Number((document.getElementById("collatTextbox") as HTMLInputElement).value);
-    const maxVal = Number((document.getElementById("collatTextbox") as HTMLInputElement).max);
-    const minVal = Number((document.getElementById("borrowTextbox") as HTMLInputElement).min);
+    const maxVal = Number((document.getElementById("collatTextbox") as HTMLInputElement).max) * conversionData[e.target.id + "-unit"];
+    const minVal = Number((document.getElementById("borrowTextbox") as HTMLInputElement).min) * conversionData[e.target.id + "-unit"];
   
     if (value <= maxVal && value >= minVal) {
       setInputValue(value);
