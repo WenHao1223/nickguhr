@@ -12,7 +12,7 @@ function PropertyModal (props) {
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
         <h3 className="font-bold text-lg">Select Another Property</h3>
-        <p className="text-xs font-gray-600 opacity-75">Press ESC key or click on ✕ button to close</p>
+        <p className="text-xs font-gray-600 opacity-75">Prwess ESC key or click on ✕ button to close</p>
         {
           propertyData.map((property) => (
             <PropertyCard
