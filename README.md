@@ -30,7 +30,6 @@ This project is aimed to make **lending process easier** and **more accessible**
 ## Resources Link
 - [RWAR - Canva Presentation Link](https://discord.com/channels/1274265023996235838/1274265023996235841/1274619558577049671)
 - [YouTube Presentation Link](https://youtu.be/Zwwj_TSZL_I)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zwwj_TSZL_I?si=sO0dDDPyxpLZ1lmn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## GitHub Folders
 Frontend folder:
