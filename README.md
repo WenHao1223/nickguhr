@@ -28,7 +28,7 @@ This project is aimed to make **lending process easier** and **more accessible**
 ![alt text](lend.png)
 
 ## Resources Link
-- [RWAR - Canva Presentation Link](https://discord.com/channels/1274265023996235838/1274265023996235841/1274619558577049671)
+- [RWAR - Canva Presentation Link](https://www.canva.com/design/DAGOKZropXQ/4vtGhyVN_gymhy_P6tHopw/view)
 - [YouTube Presentation Link](https://youtu.be/Zwwj_TSZL_I)
 
 ## GitHub Folders
